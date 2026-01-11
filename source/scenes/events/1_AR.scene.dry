@@ -1,0 +1,13 @@
+title: 1 AR
+subtitle: A new year
+on-arrival: {!
+// see post_event.scene.dry for changes.
+Q.economic_growth -= 4;
+
+!}
+tags: event
+view-if: year = 1 and month = 1
+priority: 2
+max-visits: 1
+
+A new day dawns. Differences between the Matoran and Agori are becoming sharper and conflicts are becoming more common.
