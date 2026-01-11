@@ -1,0 +1,33 @@
+title: Toa Helryx
+is-pinned-card: true
+tags: advisor, security
+card-image: img/portraits/HilferdingRudolf.jpg
+view-if: helryx_advisor = 1
+new-page: true
+#face-image: img/portraits/HilferdingRudolf.jpg
+
+= Toa Helryx
+
+Among the first Toa created by the Great Beings, Helryx has a long history of serving the Great Spirit covertly - first as a member of the Hand of Artakha, and then as the leader of the Order. She believes that in all cases, the ends justify the means, and will go to great lengths to serve the Order and the Great Spirit's will.
+
+- @mental_discipline
+- @always_ready
+- @root: Return to main
+
+@mental_discipline
+title: Mental Discipline
+subtitle: Helryx has studied methods to ward the mind against assault.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer = 0
+on-arrival: advisor_action_timer = 5; advisor_action_time = time; center_strength += 10; left_strength -= 5; labor_strength -= 5; neorevisionist_strength -= 5; center_dissent -= 10
+
+We have reinforced our mental defenses.
+
+@always_ready
+title: Always Ready
+subtitle: Helryx believes that the Order of Mata Nui must be ever vigilant against any and all threats.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_toleration: The SPD is not in toleration. ?]
+choose-if: spd_in_government = 0 and spd_toleration = 1 and advisor_action_timer = 0
+on-arrival: advisor_action_timer = 6; left_dissent -= 10; neorevisionist_dissent -= 8; center_dissent -= 5
+
+We have prepared the Order for any threats.
