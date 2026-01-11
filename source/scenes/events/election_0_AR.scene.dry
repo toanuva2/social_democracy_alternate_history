@@ -1,10 +1,10 @@
-title: Reichstag Elections
+title: New Atero Council Elections
 new-page: true
 tags: event
 priority: -1
 view-if: (year = next_election_year and month >= next_election_month) or (year > next_election_year)
 on-departure: month_actions += 1; in_election = 0; next_election_year = next_election_year + 4; n_elections += 1; next_election_time = time + 48; papen_chancellor_timer = 4;
-set-jump: post_election_1928
+set-jump: post_election_0_AR
 face-image: img/Rothe_Wahlen_1903.jpg
 
 # TODO: should there be an image?
@@ -13,7 +13,7 @@ face-image: img/Rothe_Wahlen_1903.jpg
 
 = Elections, [+ month : month +] [+ year +]
 
-The Reichstag elections are to be held now.
+The Council elections are to be held now.
 
 - @election_algorithm: May we do our best...
 - @cancel_elections
@@ -36,7 +36,7 @@ Fine. President [+ president +] has taken the unprecedented step of canceling th
 
 Let us hope this does not backfire.
 
-@post_election_1928
+@post_election_0_AR
 on-arrival: {!
 // set old results
 // election threshold constitutional reform
